@@ -14,38 +14,6 @@ Podium is a fork of GoToSocial that aims to add full support for Soapbox FE.
 
 Documentation is at [docs.gotosocial.org](https://docs.gotosocial.org). You can skip straight to the API documentation [here](https://docs.gotosocial.org/en/latest/api/swagger/). To build from source, check the [CONTRIBUTING.md](./CONTRIBUTING.md) file.
 
-## Table of Contents <!-- omit in toc -->
-
-- [What is GoToSocial?](#what-is-gotosocial)
-  - [Federation](#federation)
-  - [History and Status](#history-and-status)
-- [Features](#features)
-  - [Mastodon API compatibility](#mastodon-api-compatibility)
-  - [Granular post settings](#granular-post-settings)
-  - [Customizability for admins](#customizability-for-admins)
-  - [Easy to run](#easy-to-run)
-  - [Safety + security features](#safety--security-features)
-  - [Various federation modes](#various-federation-modes)
-  - [OIDC integration](#oidc-integration)
-  - [Backend-first design](#backend-first-design)
-- [Wishlist](#wishlist)
-- [Getting Started](#getting-started)
-- [Third-Party Packaging](#third-party-packaging)
-- [Known Issues](#known-issues)
-  - [Client App Issues](#client-app-issues)
-  - [Federation Issues](#federation-issues)
-- [Contributing](#contributing)
-- [Building](#building)
-- [Contact](#contact)
-- [Credits](#credits)
-  - [Libraries](#libraries)
-  - [Image Attribution and Licensing](#image-attribution-and-licensing)
-  - [Team](#team)
-  - [Special Thanks](#special-thanks)
-- [Sponsorship + Funding](#sponsorship--funding)
-  - [Crowdfunding](#crowdfunding)
-  - [NLnet](#nlnet)
-- [License](#license)
 
 ## What is Podium?
 
