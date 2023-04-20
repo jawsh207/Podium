@@ -1,20 +1,18 @@
-# GoToSocial <!-- omit in toc -->
+# Podium <!-- omit in toc -->
 
-GoToSocial is an [ActivityPub](https://activitypub.rocks/) social network server, written in Golang.
+Podium is an [ActivityPub](https://activitypub.rocks/) social network server, written in Golang.
 
-With GoToSocial, you can keep in touch with your friends, post, read, and share images and articles. All without being tracked or advertised to!
+With Podium, you can keep in touch with your friends, post, read, and share images and articles. All without being tracked or advertised to!
 
 <p align="middle">
   <img src="./docs/assets/sloth.png" width="300"/>
 </p>
 
-**GoToSocial is still [ALPHA SOFTWARE](https://en.wikipedia.org/wiki/Software_release_life_cycle#Alpha)**. It is already deployable and useable, and it federates cleanly with many other Fediverse servers (not yet all). However, many things are not yet implemented, and there are plenty of bugs! We foresee entering beta somewhere in 2023.
+**Podium is still [ALPHA SOFTWARE](https://en.wikipedia.org/wiki/Software_release_life_cycle#Alpha)**. It is already deployable and useable, and it federates cleanly with many other Fediverse servers (not yet all). However, many things are not yet implemented, and there are plenty of bugs! We foresee entering beta somewhere in 2023.
+
+Podium is a fork of GoToSocial that aims to add full support for Soapbox FE.
 
 Documentation is at [docs.gotosocial.org](https://docs.gotosocial.org). You can skip straight to the API documentation [here](https://docs.gotosocial.org/en/latest/api/swagger/). To build from source, check the [CONTRIBUTING.md](./CONTRIBUTING.md) file.
-
-Here's a screenshot of the instance landing page!
-
-![Screenshot of the landing page for the GoToSocial instance goblin.technology. It shows basic information about the instance; number of users and posts etc.](./docs/assets/instancesplash.png)
 
 ## Table of Contents <!-- omit in toc -->
 
@@ -49,23 +47,21 @@ Here's a screenshot of the instance landing page!
   - [NLnet](#nlnet)
 - [License](#license)
 
-## What is GoToSocial?
+## What is Podium?
 
-GoToSocial provides a lightweight, customizable, and safety-focused entryway into the [Fediverse](https://en.wikipedia.org/wiki/Fediverse), and is comparable to (but distinct from) existing projects such as [Mastodon](https://joinmastodon.org/), [Pleroma](https://pleroma.social/), [Friendica](https://friendi.ca), and [PixelFed](https://pixelfed.org/).
+Podium provides a lightweight, customizable, and safety-focused entryway into the [Fediverse](https://en.wikipedia.org/wiki/Fediverse), and is comparable to (but distinct from) existing projects such as [Mastodon](https://joinmastodon.org/), [Pleroma](https://pleroma.social/), [Friendica](https://friendi.ca), and [PixelFed](https://pixelfed.org/).
 
-If you've ever used something like Twitter or Tumblr (or even Myspace!) GoToSocial will probably feel familiar to you: You can follow people and have followers, you make posts which people can favourite and reply to and share, and you scroll through posts from people you follow using a timeline. You can write long posts or short posts, or just post images, it's up to you. You can also, of course, block people or otherwise limit interactions that you don't want by posting just to your friends.
+If you've ever used something like Twitter or Tumblr (or even Myspace!) Podium will probably feel familiar to you, especially when paired with Soapbox: You can follow people and have followers, you make posts which people can favourite and reply to and share, and you scroll through posts from people you follow using a timeline. You can write long posts or short posts, or just post images, it's up to you. You can also, of course, block people or otherwise limit interactions that you don't want by posting just to your friends.
 
-![Screenshot of the web view of a profile in GoToSocial, showing header and avatar, bio, and numbers of followers/following.](./docs/assets/profile1.png)
+**Podium does NOT use recommendation algorithms or collect data about you to suggest content or 'improve your experience'**. The timeline is chronological: whatever you see at the top of your timeline is there because it's *just been posted*, not because it's been selected as interesting (or controversial) based on your personal profile.
 
-**GoToSocial does NOT use recommendation algorithms or collect data about you to suggest content or 'improve your experience'**. The timeline is chronological: whatever you see at the top of your timeline is there because it's *just been posted*, not because it's been selected as interesting (or controversial) based on your personal profile.
+Podium is not designed for 'must-follow' influencers with tens of thousands of followers, and it's not designed to be addictive. Your timeline and your experience are shaped by who you follow and how you interact with people, not by metrics of engagement!
 
-GoToSocial is not designed for 'must-follow' influencers with tens of thousands of followers, and it's not designed to be addictive. Your timeline and your experience are shaped by who you follow and how you interact with people, not by metrics of engagement!
-
-GoToSocial doesn't claim to be *better* than any other application, but it offers something that might be better *for you* in particular.
+Podium doesn't claim to be *better* than any other application, but it offers something that might be better *for you* in particular.
 
 ### Federation
 
-Because GoToSocial uses [ActivityPub](https://activitypub.rocks/), you can hang out not just with people on your home server, but with people all over the [Fediverse](https://en.wikipedia.org/wiki/Fediverse), seamlessly.
+Because Podium uses [ActivityPub](https://activitypub.rocks/), you can hang out not just with people on your home server, but with people all over the [Fediverse](https://en.wikipedia.org/wiki/Fediverse), seamlessly.
 
 ![the activitypub logo](docs/assets/ap_logo.svg)
 
@@ -73,35 +69,27 @@ Federation means that your home server is part of a network of servers all over 
 
 This federated approach also means that you aren't beholden to arbitrary rules from some gigantic corporation potentially thousands of miles away. Your server has its own rules and culture; your fellow server residents are your neighbors; you will likely get to know your server admins and moderators, or be an admin yourself.
 
-GoToSocial advocates for many small, weird, specialist servers where people can feel at home, rather than a few big and generic ones where one person's voice can get lost in the crowd.
-
-### History and Status
-
-This project sprang up in February/March 2021 out of a dissatisfaction with the safety + privacy features of other Federated microblogging/social media applications, and a desire to implement something a little different.
-
-It began as a solo project, and then picked up steam as more developers became interested and jumped on.
-
-For a detailed view on what's implemented and what's not, and progress made towards [beta release](https://en.wikipedia.org/wiki/Software_release_life_cycle#Beta), please see [the roadmap document](./ROADMAP.md). The [FAQ](docs/faq.md) contains a higher-level overview.
+Podium advocates for many small, weird, specialist servers where people can feel at home, rather than a few big and generic ones where one person's voice can get lost in the crowd.
 
 ## Features
 
 ### Mastodon API compatibility
 
-The Mastodon API has become the de facto standard for client communication with federated servers, so GoToSocial has implemented and extended the API with custom functionality.
+The Mastodon API has become the de facto standard for client communication with federated servers, so Podium has implemented and extended the API with custom functionality.
 
 In short, this means full support for modern, beautiful apps like [Tusky](https://tusky.app/) and [Pinafore](https://pinafore.social/).
 
 Tusky                                                        |  Pinafore
 :-----------------------------------------------------------:|:------------------------------------------------------------------:
-![An image of GoToSocial in Tusky](./docs/assets/tusky.png)  | ![An image of GoToSocial in Pinafore](./docs/assets/pinafore.png)
+![An image of Podium in Tusky](./docs/assets/tusky.png)  | ![An image of Podium in Pinafore](./docs/assets/pinafore.png)
 
-If you're used to using Mastodon with Tusky or Pinafore, you'll find using GoToSocial a breeze.
+If you're used to using Mastodon with Tusky or Pinafore, you'll find using Podium a breeze.
 
 ### Granular post settings
 
 It's important that when you post something, you can choose who sees it.
 
-GoToSocial offers public/unlisted/friends-only/mutuals-only/and direct posts (slide in DMs! -- with consent).
+Podium offers public/unlisted/friends-only/mutuals-only/and direct posts (slide in DMs! -- with consent).
 
 It also allows you to customize how people interact with your posts:
 
@@ -121,18 +109,18 @@ Plenty of [config options](./example/config.yaml) for admins to play around with
 
 No external dependencies apart from a database (or just use SQLite!). Simply download the binary + assets (or Docker container), and run.
 
-GoToSocial plays nice with lower-powered machines like Raspberry Pi, old laptops and tiny $5/month VPSes.
+Podium plays nice with lower-powered machines like Raspberry Pi, old laptops and tiny $5/month VPSes.
 
 ### Safety + security features
 
 - Built-in, automatic support for secure HTTPS with [Let's Encrypt](https://letsencrypt.org/).
 - Strict privacy enforcement for posts and strict blocking logic.
 - Import and export allow lists and deny lists. Subscribe to community-created block lists (think Ad blocker, but for federation!).
-- HTTP signature authentication: GoToSocial requires [HTTP Signatures](https://tools.ietf.org/id/draft-cavage-http-signatures-01.html) when sending and receiving messages, to ensure that your messages can't be tampered with and your identity can't be forged.
+- HTTP signature authentication: Podium requires [HTTP Signatures](https://tools.ietf.org/id/draft-cavage-http-signatures-01.html) when sending and receiving messages, to ensure that your messages can't be tampered with and your identity can't be forged.
 
 ### Various federation modes
 
-GoToSocial doesn't apply a one-size-fits-all approach to federation. Who your server federates with should be up to you.
+Podium doesn't apply a one-size-fits-all approach to federation. Who your server federates with should be up to you.
 
 - 'Normal' federation; discover new servers.
 - *Allow list*-only federation; choose which servers you talk to.
@@ -140,11 +128,11 @@ GoToSocial doesn't apply a one-size-fits-all approach to federation. Who your se
 
 ### OIDC integration
 
-GoToSocial supports [OpenID Connect (OIDC)](https://openid.net/connect/) identity providers, meaning you can integrate it with existing user management services like [Auth0](https://auth0.com/), [Gitlab](https://docs.gitlab.com/ee/integration/openid_connect_provider.html), etc., or run your own and hook GtS up to that (we recommend [Dex](https://dexidp.io/)).
+Podium supports [OpenID Connect (OIDC)](https://openid.net/connect/) identity providers, meaning you can integrate it with existing user management services like [Auth0](https://auth0.com/), [Gitlab](https://docs.gitlab.com/ee/integration/openid_connect_provider.html), etc., or run your own and hook GtS up to that (we recommend [Dex](https://dexidp.io/)).
 
 ### Backend-first design
 
-Unlike other federated server projects, GoToSocial doesn't include an integrated client front-end (i.e., a web app).
+Unlike other federated server projects, Podium doesn't include an integrated client front-end (i.e., a web app).
 
 Instead, like Matrix.org's [Synapse](https://github.com/matrix-org/synapse) project, it provides a relatively generic backend server implementation, some beautiful static pages for profiles and posts, and a [well-documented API](https://docs.gotosocial.org/en/latest/api/swagger/).
 
@@ -167,47 +155,35 @@ These cool things will be implemented if time allows (because we really want the
 
 All docs for installation and configuration are hosted at [docs.gotosocial.org](https://docs.gotosocial.org).
 
-## Third-Party Packaging
-
-Thank you so much to the cool people who have put time and energy into packaging GoToSocial! Known third-party packaging projects are listed below:
-
-- [YunoHost GoToSocial Packaging](https://github.com/YunoHost-Apps/gotosocial_ynh) by [OniriCorpe](https://github.com/OniriCorpe).
-- GoToSocial Helm Charts:
-  - [GoToSocial Helm Chart](https://github.com/Maxxblow/charts/tree/main/charts/gotosocial) by [0hlov3](https://github.com/0hlov3).
-
-These packages are not maintained by GoToSocial, so please direct questions and issues to the repository maintainers (and donate to them!).
-
 ## Known Issues
 
-Since GoToSocial is still in alpha, there are plenty of bugs. We use [GitHub issues](https://github.com/superseriousbusiness/gotosocial/issues?q=is%3Aissue+is%3Aopen+label%3Abug) to track these. The [FAQ](docs/faq.md) also describes some of the features that haven't been implemented yet.
+Since Podium is still in alpha, there are plenty of bugs. We use [GitHub issues](https://github.com/superseriousbusiness/gotosocial/issues?q=is%3Aissue+is%3Aopen+label%3Abug) to track these. The [FAQ](docs/faq.md) also describes some of the features that haven't been implemented yet.
 
 ### Client App Issues
 
-GoToSocial works great with Tusky and Pinafore, but some other client applications still need work or have issues connecting to GoToSocial. We're tracking them [right here](https://github.com/superseriousbusiness/gotosocial/projects/5). It's our goal to make any app that's compatible with the Mastodon API work seamlessly with GoToSocial.
+Podium works great with Tusky and Pinafore, but some other client applications still need work or have issues connecting to Podium. It's our goal to make any app that's compatible with the Mastodon API work seamlessly with Podium, with a strong focus on Soapbox.
 
 ### Federation Issues
 
-Since every ActivityPub server implementation has a slightly different interpretation of the protocol, some servers don't quite federate properly with GoToSocial yet. We're tracking these issues [in this project](https://github.com/superseriousbusiness/gotosocial/projects/4). Eventually, we want to make sure that any implementation that can federate nicely with Mastodon should also be able to federate with GoToSocial.
+Since every ActivityPub server implementation has a slightly different interpretation of the protocol, some servers don't quite federate properly with Podium yet. Eventually, we want to make sure that any implementation that can federate nicely with Mastodon should also be able to federate with Podium.
 
 ## Contributing
 
-You would like to contribute to GtS? Great! ❤️❤️❤️ Check out the issues page to see if there's anything you intend to jump in on, and read the [CONTRIBUTING.md](./CONTRIBUTING.md) file for guidelines and setting up your dev environment.
+You would like to contribute to Podium? Great! ❤️❤️❤️ Check out the issues page to see if there's anything you intend to jump in on, and read the [CONTRIBUTING.md](./CONTRIBUTING.md) file for guidelines and setting up your dev environment.
 
 ## Building
 
-Instructions for building GoToSocial from source are in the [CONTRIBUTING.md](./CONTRIBUTING.md) file.
+Instructions for building Podium from source are in the [CONTRIBUTING.md](./CONTRIBUTING.md) file.
 
 ## Contact
 
-For questions and comments, you can [join our Matrix space](https://matrix.to/#/#gotosocial-space:superseriousbusiness.org) at `#gotosocial-space:superseriousbusiness.org`. This is the quickest way to reach the devs. You can also mail [admin@gotosocial.org](mailto:admin@gotosocial.org).
-
-For bugs and feature requests, please check to see if there's [already an issue](https://github.com/superseriousbusiness/gotosocial/issues), and if not, open one or use one of the above channels to make a request (if you don't have a Github account).
+For bugs and feature requests, please check to see if there's [already an issue](https://github.com/jawsh207/Podium/issues), and if not, open one.
 
 ## Credits
 
 ### Libraries
 
-The following libraries and frameworks are used by GoToSocial, with gratitude 💕
+The following libraries and frameworks are used by Podium, with gratitude 💕
 
 - [abema/go-mp4](https://github.com/abema/go-mp4); mp4 parsing. [MIT License](https://spdx.org/licenses/MIT.html).
 - [buckket/go-blurhash](https://github.com/buckket/go-blurhash); used for generating image blurhashes. [GPL-3.0 License](https://spdx.org/licenses/GPL-3.0-only.html).
@@ -279,7 +255,7 @@ Under the terms of the license, you are free to:
 - Share — copy and redistribute the abovementioned material in any medium or format.
 - Adapt — remix, transform, and build upon the abovementioned material for any purpose, even commercially.
 
-### Team
+### GoToSocial Team
 
 In alphabetical order (... and order of smell):
 
@@ -287,49 +263,3 @@ In alphabetical order (... and order of smell):
 - kim \[check out my code @ [codeberg](https://codeberg.org/gruf), or find me @ [@kim](https://k.iim.gay/@kim)\]
 - tobi \[[donate with liberapay](https://liberapay.com/GoToSocial/)\]
 - maloki \[[@maloki@goblin.technology](https://goblin.technology/@maloki)\]
-
-### Special Thanks
-
-A huge thank you to CJ from [go-fed](https://github.com/go-fed/activity): without your work, GoToSocial would not have been possible.
-
-Thanks to everyone who has used GtS, opened an issue, suggested something, given funding, and otherwise encouraged or supported the project!
-
-## Sponsorship + Funding
-
-**Please note: GoToSocial has NO CORPORATE SPONSORS and does not desire corporate sponsorship. In addition, we do not take donations from any of the following: adult websites, affiliate and review websites, casinos and gambling, insurance and financial products (credit), pharmacy products, SEO services and social media buying, VPN and proxy services, and essay writing services. Donations from such sources will be automatically rejected.**
-
-### Crowdfunding
-
-![open collective Standard Sloth badge](https://opencollective.com/gotosocial/tiers/standard-sloth/badge.svg?label=Standard%20Sloth&color=brightgreen) ![open collective Stable Sloth badge](https://opencollective.com/gotosocial/tiers/stable-sloth/badge.svg?label=Stable%20Sloth&color=green) ![open collective Special Sloth badge](https://opencollective.com/gotosocial/tiers/special-sloth/badge.svg?label=Special%20Sloth&color=yellowgreen) ![open collective Sugar Sloth badge](https://opencollective.com/gotosocial/tiers/sugar-sloth/badge.svg?label=Sugar%20Sloth&color=blue)
-
-If you would like to donate to GoToSocial to keep the lights on during development, [you can do so via our OpenCollective page](https://opencollective.com/gotosocial#support)!
-
-![LiberaPay patrons](https://img.shields.io/liberapay/patrons/GoToSocial.svg?logo=liberapay) ![receives via LiberaPay](https://img.shields.io/liberapay/receives/GoToSocial.svg?logo=liberapay)
-
-If you prefer, we also have an account on LiberaPay! You can find that [right here](https://liberapay.com/GoToSocial/).
-
-Crowdfunded donations to our OpenCollective and Liberapay accounts go towards paying the core team, paying server costs, and paying for GtS art, design, and other bits and bobs.
-
-💕 🦥 💕 Thank you!
-
-### NLnet
-
-<img src="https://nlnet.nl/logo/NGI/NGIZero-green.hex.svg" width="75" alt="NGIZero logo"/>
-
-Combined with the above crowdfunding sources, 2023 Alpha development of GoToSocial is also funded by a 50,000 EUR grant from the [NGI0 Entrust Fund](https://nlnet.nl/entrust/), via [NLnet](https://nlnet.nl/). See [here](https://nlnet.nl/project/GoToSocial/#ack) for more details. The successful grant application is archived [here](https://github.com/superseriousbusiness/gotosocial/blob/main/archive/nlnet/2022-next-generation-internet-zero.md).
-
-## License
-
-![the gnu AGPL logo](https://www.gnu.org/graphics/agplv3-155x51.png)
-
-GoToSocial is free software, licensed under the [GNU AGPL v3 LICENSE](LICENSE). We encourage forking and changing the code, hacking around with it, and experimenting.
-
-See [here](https://www.gnu.org/licenses/why-affero-gpl.html) for the differences between AGPL versus GPL licensing, and [here](https://www.gnu.org/licenses/gpl-faq.html) for FAQ's about GPL licenses, including the AGPL.
-
-If you modify the GoToSocial source code, and run that modified code in a way that's accessible over a network, you *must* make your modifications to the source code available following the guidelines of the license:
-
-> \[I\]f you modify the Program, your modified version must prominently offer all users interacting with it remotely through a computer network (if your version supports such interaction) an opportunity to receive the Corresponding Source of your version by providing access to the Corresponding Source from a network server at no charge, through some standard or customary means of facilitating copying of software.
-
-Copyright (C) 2021-2023 GoToSocial Authors
-
-(I'm adding this here to take the crown of having the 1000th commit ~ kim)
