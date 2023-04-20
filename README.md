@@ -1,5 +1,7 @@
 # Podium <!-- omit in toc -->
 
+A straight copy of GoToSocial intended to be better by enabling full support for Soapbox and other projects that the main developers refuse to work with.
+
 Podium is an [ActivityPub](https://activitypub.rocks/) social network server, written in Golang.
 
 With Podium, you can keep in touch with your friends, post, read, and share images and articles. All without being tracked or advertised to!
